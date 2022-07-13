@@ -4,7 +4,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.customutilites.Model;
 import com.example.customutilites.Utils;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
