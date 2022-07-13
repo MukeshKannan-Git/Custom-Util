@@ -20,7 +20,6 @@ public class Model{
     private String AddtNbr;
 
     public Model(int id, String EventTime, String HostId, String UserId, String LocationNbr, String RouteNbr, String Day, String Logger, String EventNbr, String AddtDesc, String AddtNbr) {
-        this.id = id;
         this.EventTime = EventTime;
         this.HostId = HostId;
         this.UserId = UserId;
