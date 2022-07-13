@@ -1,35 +1,79 @@
 package com.example.customutilites;
 
-import androidx.room.Dao;
 import androidx.room.Entity;
-import androidx.room.Insert;
 import androidx.room.PrimaryKey;
-import androidx.room.Query;
-
-import java.util.List;
 
 @Entity(tableName = "person")
 public class Model{
 
     @PrimaryKey(autoGenerate = true)
     int id;
-    private String name;
-    private String lastname;
+    private String EventTime;
+    private String HostId;
+    private String UserId;
+    private String LocationNbr;
+    private String RouteNbr;
+    private String Day;
+    private String Logger;
+    private String EventNbr;
+    private String AddtDesc;
+    private String AddtNbr;
 
-    public Model(int id, String name, String lastname) {
-        this.name = name;
-        this.lastname = lastname;
+    public Model(int id, String EventTime, String HostId, String UserId, String LocationNbr, String RouteNbr, String Day, String Logger, String EventNbr, String AddtDesc, String AddtNbr) {
+        this.id = id;
+        this.EventTime = EventTime;
+        this.HostId = HostId;
+        this.UserId = UserId;
+        this.LocationNbr = LocationNbr;
+        this.RouteNbr = RouteNbr;
+        this.Day = Day;
+        this.Logger = Logger;
+        this.EventNbr = EventNbr;
+        this.AddtDesc = AddtDesc;
+        this.AddtNbr = AddtNbr;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getEventTime() {
+        return EventTime;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getHostId() {
+        return HostId;
+    }
+
+    public String getUserId() {
+        return UserId;
+    }
+
+    public String getLocationNbr() {
+        return LocationNbr;
+    }
+
+    public String getRouteNbr() {
+        return RouteNbr;
+    }
+
+    public String getDay() {
+        return Day;
+    }
+
+    public String getLogger() {
+        return Logger;
+    }
+
+    public String getEventNbr() {
+        return EventNbr;
+    }
+
+    public String getAddtDesc() {
+        return AddtDesc;
+    }
+
+    public String getAddtNbr() {
+        return AddtNbr;
     }
 }
