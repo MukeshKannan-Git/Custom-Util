@@ -1,4 +1,4 @@
-package com.example.customutilites;
+package com.example.customutilites.DB;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

@@ -1,4 +1,4 @@
-package com.example.customutilites;
+package com.example.customutilites.DB;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

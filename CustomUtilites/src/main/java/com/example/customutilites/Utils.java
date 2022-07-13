@@ -1,31 +1,17 @@
 package com.example.customutilites;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Build;
-import android.util.Log;
-import android.widget.Toast;
-
-import org.json.JSONException;
+import androidx.appcompat.app.AlertDialog;
 import org.json.JSONObject;
-
-import java.util.List;
 
 public class Utils {
 
-    public static void insertRoom(final Context context, final Model model) {
-        RoomDB roomDB = RoomDB.getInstance(context.getApplicationContext());
-        roomDB.personDao().insertPerson(model);
-    }
-
-    public static void deleteRoom(final Context context, int userID) {
-        RoomDB roomDB = RoomDB.getInstance(context.getApplicationContext());
-        roomDB.personDao().deletePerson(userID);
-    }
-
-    public static List<Model> getRoom(final Context context) {
-        RoomDB roomDB = RoomDB.getInstance(context.getApplicationContext());
-        return roomDB.personDao().getPersonList();
+    public static void showAlert(Context context, String title, String message){
+        new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.yes, null).show();
     }
 
     public static JSONObject getSystemDetails() {
