@@ -2,16 +2,26 @@ package com.example.customutilites;
 
 import android.content.Context;
 import android.os.Build;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
+
 import org.json.JSONObject;
 
 public class Utils {
 
-    public static void showAlert(Context context, String title, String message){
-        new AlertDialog.Builder(context)
-                .setTitle(title)
-                .setMessage(message)
-                .setPositiveButton(android.R.string.yes, null).show();
+    public static void showAlert(Context context, String title, String message) {
+        if (context != null) {
+            new AlertDialog.Builder(context)
+                    .setTitle(title)
+                    .setMessage(message)
+                    .setPositiveButton(android.R.string.yes, null).show();
+        }
+    }
+
+    public static void showToast(Context context, String message) {
+        if (context != null && message != null)
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
     public static JSONObject getSystemDetails() {
@@ -36,6 +46,6 @@ public class Utils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new JSONObject();
+        return null;
     }
 }
