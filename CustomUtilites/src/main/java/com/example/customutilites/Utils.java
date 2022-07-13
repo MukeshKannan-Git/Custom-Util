@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.google.gson.JsonObject;
+
 import org.json.JSONObject;
 
 public class Utils {
@@ -24,28 +26,23 @@ public class Utils {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
-    public static JSONObject getSystemDetails() {
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("SERIAL: ", Build.SERIAL);
-            jsonObject.put("MODEL: ", Build.MODEL);
-            jsonObject.put("ID: ", Build.ID);
-            jsonObject.put("Manufacture: ", Build.MANUFACTURER);
-            jsonObject.put("BRAND: ", Build.BRAND);
-            jsonObject.put("TYPE: ", Build.TYPE);
-            jsonObject.put("USER: ", Build.USER);
-            jsonObject.put("BASE: ", Build.VERSION_CODES.BASE);
-            jsonObject.put("INCREMENTAL ", Build.VERSION.INCREMENTAL);
-            jsonObject.put("SDK  ", Build.VERSION.SDK);
-            jsonObject.put("BOARD: ", Build.BOARD);
-            jsonObject.put("BRAND ", Build.BRAND);
-            jsonObject.put("HOST ", Build.HOST);
-            jsonObject.put("FINGERPRINT: ", Build.FINGERPRINT);
-            jsonObject.put("VERSION CODE: ", Build.VERSION.RELEASE);
-            return jsonObject;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public static JsonObject getSystemDetails() {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("SERIAL          \t : ", Build.SERIAL);
+        jsonObject.addProperty("MODEL           \t : ", Build.MODEL);
+        jsonObject.addProperty("ID              \t : ", Build.ID);
+        jsonObject.addProperty("Manufacture     \t : ", Build.MANUFACTURER);
+        jsonObject.addProperty("BRAND           \t : ", Build.BRAND);
+        jsonObject.addProperty("TYPE            \t : ", Build.TYPE);
+        jsonObject.addProperty("USER            \t : ", Build.USER);
+        jsonObject.addProperty("BASE            \t : ", Build.VERSION_CODES.BASE);
+        jsonObject.addProperty("INCREMENTAL     \t : ", Build.VERSION.INCREMENTAL);
+        jsonObject.addProperty("SDK             \t : ", Build.VERSION.SDK);
+        jsonObject.addProperty("BOARD           \t : ", Build.BOARD);
+        jsonObject.addProperty("BRAND           \t : ", Build.BRAND);
+        jsonObject.addProperty("HOST            \t : ", Build.HOST);
+        jsonObject.addProperty("FINGERPRINT     \t : ", Build.FINGERPRINT);
+        jsonObject.addProperty("ANDROID VERSION \t : ", Build.VERSION.RELEASE);
+        return jsonObject;
     }
 }
