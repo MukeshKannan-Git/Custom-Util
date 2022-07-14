@@ -8,15 +8,15 @@ import java.util.List;
 @Dao
 public interface PersonDao {
 
-    @Query("Select * FROM person")
+    @Query("Select * FROM CINTAS")
     List<Model> getPersonList();
 
     @Insert
     void insertPerson(Model person);
 
-    @Query("DELETE FROM person WHERE id = :userID")
+    @Query("DELETE FROM CINTAS WHERE SNO = :userID")
     void deletePerson(int userID);
 
-    @Query("UPDATE person SET EventTime= :NewData WHERE UserId= :userID")
+    @Query("UPDATE CINTAS SET EventTime= :NewData WHERE UserId= :userID")
     void updatePerson(String userID, String NewData);
 }

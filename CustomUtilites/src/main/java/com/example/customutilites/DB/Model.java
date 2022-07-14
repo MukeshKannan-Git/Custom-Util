@@ -3,11 +3,11 @@ package com.example.customutilites.DB;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "person")
+@Entity(tableName = "CINTAS")
 public class Model{
 
     @PrimaryKey(autoGenerate = true)
-    int id;
+    int SNO;
     private String EventTime;
     private String HostId;
     private String UserId;
@@ -19,7 +19,7 @@ public class Model{
     private String AddtDesc;
     private String AddtNbr;
 
-    public Model(int id, String EventTime, String HostId, String UserId, String LocationNbr, String RouteNbr, String Day, String Logger, String EventNbr, String AddtDesc, String AddtNbr) {
+    public Model(String EventTime, String HostId, String UserId, String LocationNbr, String RouteNbr, String Day, String Logger, String EventNbr, String AddtDesc, String AddtNbr) {
         this.EventTime = EventTime;
         this.HostId = HostId;
         this.UserId = UserId;
@@ -30,10 +30,6 @@ public class Model{
         this.EventNbr = EventNbr;
         this.AddtDesc = AddtDesc;
         this.AddtNbr = AddtNbr;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getEventTime() {

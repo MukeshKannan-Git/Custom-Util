@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase;
 @androidx.room.Database(entities = Model.class, exportSchema = false, version = 1)
 public abstract class RoomDB extends RoomDatabase {
 
-    private static final String DB_NAME = "person_db";
+    private static final String DB_NAME = "CINTAS_MAIN_DB";
     private static RoomDB instance;
 
     public abstract PersonDao personDao();
